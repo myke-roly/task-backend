@@ -5,13 +5,15 @@ const conectDB = async () => {
 	try {
 		await mongoose.connect(process.env.DB_MONGO, {
 			useNewUrlParser: true,
+			useCreateIndex: true,
 			useUnifiedTopology: true,
-			useFindAndModify: true
+			useFindAndModify: false
 		});
 		console.log('db Contect');
 	} catch (err) {
 		console.log(err);
-		process.exit(1); //Detenemos la aplicacion
+		/** si falla la conexion detenemos la aplicacion */
+		process.exit(1);
 	}
 };
 

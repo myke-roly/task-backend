@@ -7,7 +7,6 @@ const conectDB = require('./config/db');
 const mongoose = require('mongoose');
 
 conectDB();
-mongoose.set('useCreateIndex', true);
 
 const PORT = process.env.PORT || 3030;
 
@@ -16,11 +15,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 // app.use(morgan('dev'));
-app.use(morgan('common'));
+app.use(morgan('dev')); //common
 
 /** Routes */
 app.use('/', require('./routes/routes'));
-app.use('/api', require('./routes/users'));
+app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/projects', require('./routes/projects'));
 

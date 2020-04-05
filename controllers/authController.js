@@ -31,8 +31,11 @@ exports.authUser = async (req, res) => {
 
 		/** Crear Y firma el JWT */
 		const payload = {
-			id: user.id
-      };
+			user: {
+            id: user.id
+			}
+			// id: user.id
+		};
       
       jwt.sign(payload, process.env.WORD_SECRET, {
          expiresIn: 3600

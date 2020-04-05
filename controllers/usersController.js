@@ -48,6 +48,6 @@ exports.crearUser = async (req, res) => {
       await user.save();
 	} catch (error) {
       console.log(error);
-		res.status(403).send('No se Pudo Gurdar nada');
+		res.status(500).send('Hay un error de servidor');
 	}
 };
