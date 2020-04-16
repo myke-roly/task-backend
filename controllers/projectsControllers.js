@@ -65,7 +65,6 @@ exports.updateProject = async (req, res) => {
 		}
 
 		/** Verificar si es el creador del proyecto */
-		console.log(req.user)
 		if(project.creator.toString() !== req.user.id) {
 			return res.status(401).json({ message: "No esta autorizado"})
 		}

@@ -38,7 +38,7 @@ exports.authUser = async (req, res) => {
 		};
       
       jwt.sign(payload, process.env.WORD_SECRET, {
-         expiresIn: 3600
+         expiresIn: 18000
       }, (error, token) => {
 			if(error) throw error;
 			return res.status(200).json({ token, message: user });
