@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const conectDB = require('./config/db');
+const conectDB = require('./api/config/db');
 const mongoose = require('mongoose');
 
 conectDB();
