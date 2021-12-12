@@ -19,10 +19,10 @@ app.use(cors());
 app.use(morgan('common'));
 
 /** Routes */
-app.use('/', require('./routes/routes'));
-app.use('/api', require('./routes/users'));
-app.use('/auth', require('./routes/auth'));
-app.use('/projects', require('./routes/projects'));
+app.use('/', require('./api/routes/routes'));
+app.use('/api', require('./api/routes/users'));
+app.use('/auth', require('./api/routes/auth'));
+app.use('/projects', require('./api/routes/projects'));
 
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`);

@@ -2,9 +2,13 @@
   "name": "primer-proyecto-linux",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js",
+    "start": "npm run prod",
+    "build": "npm-run-all clean transpile",
+    "prod": "NODE_ENV=production npm-run-all build server",
+    "transpile": "babel ./src --out-dir dist"
   },
   "author": "",
   "license": "ISC",

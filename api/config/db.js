@@ -8,7 +8,7 @@ const conectDB = async () => {
 			useUnifiedTopology: true,
 			useFindAndModify: true
 		});
-		console.log('db Contect');
+		console.log('Data base connected');
 	} catch (err) {
 		console.log(err);
 		process.exit(1); //Detenemos la aplicacion
